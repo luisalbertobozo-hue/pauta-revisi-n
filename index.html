@@ -1,10 +1,300 @@
-pauta-revisi-n/
-│
-├── index.html
-├── pauta-maestra.html
-├── instrucciones.html
-│
-├── ejemplos/
-│   ├── ejemplo-1.html
-│   ├── ejemplo-2.html
-│   └── ejemplo-3.html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portal de acceso a la base de conocimiento del Agente Generador de Pautas para resoluciones administrativas.">
+  <meta http-equiv="refresh" content="8; url=conocimiento.html">
+  <title>Agente Generador de Pautas</title>
+
+  <style>
+    :root {
+      --azul-principal: #123b63;
+      --azul-secundario: #1f5f94;
+      --azul-claro: #eef5fb;
+      --gris-fondo: #f7f9fc;
+      --gris-borde: #cbd5e1;
+      --gris-texto: #1f2937;
+      --blanco: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--gris-texto);
+      background: linear-gradient(135deg, #f7f9fc 0%, #e8f1f8 100%);
+    }
+
+    header {
+      padding: 18px 24px;
+      background: var(--blanco);
+      border-bottom: 1px solid var(--gris-borde);
+    }
+
+    .barra-superior {
+      width: min(1100px, 100%);
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .marca {
+      color: var(--azul-principal);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .enlace-superior {
+      color: var(--azul-secundario);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .enlace-superior:hover,
+    .enlace-superior:focus {
+      text-decoration: underline;
+    }
+
+    main {
+      flex: 1;
+      width: min(1100px, 100%);
+      margin: 0 auto;
+      padding: 54px 24px;
+      display: grid;
+      place-items: center;
+    }
+
+    .portada {
+      width: 100%;
+      background: var(--blanco);
+      border: 1px solid var(--gris-borde);
+      border-radius: 18px;
+      padding: 46px;
+      box-shadow: 0 16px 42px rgba(15, 23, 42, 0.10);
+    }
+
+    .etiqueta {
+      display: inline-block;
+      padding: 6px 12px;
+      border-radius: 999px;
+      color: var(--azul-principal);
+      background: #dbeafe;
+      font-size: 0.88rem;
+      font-weight: 700;
+    }
+
+    h1 {
+      margin: 18px 0 12px;
+      color: var(--azul-principal);
+      font-size: clamp(2rem, 5vw, 3.3rem);
+      line-height: 1.12;
+    }
+
+    .descripcion {
+      max-width: 820px;
+      margin: 0;
+      font-size: 1.08rem;
+      line-height: 1.7;
+    }
+
+    .acciones {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .boton {
+      display: inline-block;
+      padding: 12px 17px;
+      border: 2px solid var(--azul-principal);
+      border-radius: 9px;
+      background: var(--azul-principal);
+      color: var(--blanco);
+      font-weight: 700;
+      text-decoration: none;
+      transition: transform 0.15s ease, background 0.15s ease;
+    }
+
+    .boton:hover,
+    .boton:focus {
+      background: var(--azul-secundario);
+      transform: translateY(-1px);
+    }
+
+    .boton.secundario {
+      color: var(--azul-principal);
+      background: var(--blanco);
+    }
+
+    .boton.secundario:hover,
+    .boton.secundario:focus {
+      background: var(--azul-claro);
+    }
+
+    .flujo {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 34px;
+    }
+
+    .paso {
+      padding: 18px;
+      border: 1px solid var(--gris-borde);
+      border-radius: 10px;
+      background: #fbfdff;
+    }
+
+    .paso strong {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--azul-principal);
+    }
+
+    .aviso {
+      margin-top: 28px;
+      padding: 15px 17px;
+      border-left: 5px solid var(--azul-secundario);
+      border-radius: 7px;
+      background: var(--azul-claro);
+    }
+
+    .casos {
+      margin-top: 28px;
+    }
+
+    .casos h2 {
+      color: var(--azul-principal);
+      font-size: 1.15rem;
+    }
+
+    .enlaces-casos {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .enlaces-casos a {
+      color: var(--azul-secundario);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .enlaces-casos a:hover,
+    .enlaces-casos a:focus {
+      text-decoration: underline;
+    }
+
+    footer {
+      padding: 22px 24px;
+      color: #64748b;
+      text-align: center;
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 760px) {
+      .barra-superior {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      main {
+        padding: 28px 14px;
+      }
+
+      .portada {
+        padding: 26px 20px;
+        border-radius: 12px;
+      }
+
+      .flujo {
+        grid-template-columns: 1fr;
+      }
+
+      .acciones {
+        flex-direction: column;
+      }
+
+      .boton {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="barra-superior">
+      <a class="marca" href="index.html">Agente Generador de Pautas</a>
+      <a class="enlace-superior" href="conocimiento.html">Base de conocimiento</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="portada" aria-labelledby="titulo-principal">
+      <span class="etiqueta">Portal de conocimiento</span>
+
+      <h1 id="titulo-principal">Agente Generador de Pautas</h1>
+
+      <p class="descripcion">
+        Portal de acceso a la pauta maestra, las reglas de generación y los casos de referencia utilizados para completar pautas a partir de resoluciones administrativas.
+      </p>
+
+      <div class="acciones">
+        <a class="boton" href="conocimiento.html">Abrir base de conocimiento</a>
+        <a class="boton secundario" href="ejemplos/ejemplo-1.html">Ver casos de referencia</a>
+      </div>
+
+      <div class="flujo" aria-label="Flujo de trabajo del agente">
+        <div class="paso">
+          <strong>1. Resolución de entrada</strong>
+          El usuario carga la resolución que debe ser analizada.
+        </div>
+        <div class="paso">
+          <strong>2. Análisis estructurado</strong>
+          El agente consulta la pauta maestra, las reglas y los ejemplos pertinentes.
+        </div>
+        <div class="paso">
+          <strong>3. Pauta completa</strong>
+          El agente entrega la pauta siguiendo la estructura oficial de salida.
+        </div>
+      </div>
+
+      <div class="casos">
+        <h2>Acceso directo a los casos</h2>
+        <div class="enlaces-casos">
+          <a href="ejemplos/ejemplo-1.html">Caso 1</a>
+          <span aria-hidden="true">·</span>
+          <a href="ejemplos/ejemplo-2.html">Caso 2</a>
+          <span aria-hidden="true">·</span>
+          <a href="ejemplos/ejemplo-3.html">Caso 3</a>
+        </div>
+      </div>
+
+      <div class="aviso">
+        <strong>Redirección automática:</strong>
+        si no seleccionas una opción, la base de conocimiento se abrirá en ocho segundos.
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    Base de conocimiento del Agente Generador de Pautas.
+  </footer>
+</body>
+</html>
