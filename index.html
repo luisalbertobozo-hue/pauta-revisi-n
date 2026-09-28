@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pauta de Revisión</title>
+
+<style>
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size:14px;
+    line-height:1.4;
+    color:#222;
+    max-width:1400px;
+    margin:20px auto;
+    padding:20px;
+}
+
+h1{
+    text-align:center;
+    font-size:28px;
+    margin-bottom:5px;
+}
+
+h2{
+    background:#f2f2f2;
+    padding:8px;
+    border-left:4px solid #0078d4;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin:10px 0 20px 0;
+}
+
+th, td{
+    border:1px solid #555;
+    padding:8px;
+    vertical-align:top;
+}
+
+th{
+    background:#efefef;
+}
+
+.placeholder{
+    color:#005a9e;
+    font-weight:bold;
+}
+
+.section{
+    margin-top:20px;
+}
+
+.note{
+    background:#fffde7;
+    border:1px solid #f0e68c;
+    padding:10px;
+}
+
+.footer{
+    margin-top:30px;
+    font-style:italic;
+}
+</style>
+
+</head>
+
+<body>
+
+<h1>PAUTA DE REVISIÓN</h1>
+
+<p>
+<strong>Resolución:</strong>
+<span class="placeholder">{{NUMERO_RESOLUCION}}</span>
+</p>
+
+<div class="section">
+<h2>Descripción</h2>
+
+<p>
+{{DESCRIPCION_ACTO_ADMINISTRATIVO}}
+</p>
+</div>
+
+<div class="section">
+<h2>Normativa aplicable</h2>
+
+<ul>
+<li>{{NORMA_1}}</li>
+<li>{{NORMA_2}}</li>
+<li>{{NORMA_3}}</li>
+<li>{{NORMA_4}}</li>
+<li>{{NORMA_5}}</li>
+</ul>
+
+</div>
+
+<div class="section">
+
+<h2>Firma</h2>
+
+<ul>
+<li>Monto adjudicado: <span class="placeholder">{{MONTO_ADJUDICADO}}</span></li>
+<li>UTM utilizada: <span class="placeholder">{{UTM_REFERENCIA}}</span></li>
+<li>Autoridad firmante: <span class="placeholder">{{AUTORIDAD_FIRMANTE}}</span></li>
+<li>Cargo: <span class="placeholder">{{CARGO_FIRMANTE}}</span></li>
+</ul>
+
+</div>
+
+<div class="section">
+
+<h2>Afecto a Toma de Razón</h2>
+
+<p>{{FUNDAMENTO_TOMA_RAZON}}</p>
+
+</div>
+
+<div class="section">
+
+<h2>Toma de Razón</h2>
+
+<p>{{TIPO_DE_TOMA_DE_RAZON}}</p>
+
+</div>
+
+<div class="section">
+
+<h2>Antecedentes procedimiento de precalificación y licitación pública</h2>
+
+<table>
+
+<tr>
+<th>ID Precalificación</th>
+<td>{{ID_PRECALIFICACION}}</td>
+</tr>
+
+<tr>
+<th>ID Licitación</th>
+<td>{{ID_LICITACION}}</td>
+</tr>
+
+<tr>
+<th>Código BIP</th>
+<td>{{CODIGO_BIP}}</td>
+</tr>
+
+<tr>
+<th>Presupuesto Oficial</th>
+<td>{{PRESUPUESTO_OFICIAL}}</td>
+</tr>
+
+<tr>
+<th>Empresa Adjudicada</th>
+<td>{{EMPRESA_ADJUDICADA}}</td>
+</tr>
+
+<tr>
+<th>Plazo</th>
+<td>{{PLAZO}}</td>
+</tr>
+
+<tr>
+<th>Monto Oferta Adjudicada</th>
+<td>{{MONTO_OFERTA}}</td>
+</tr>
+
+<tr>
+<th>Modalidad de Contratación</th>
+<td>{{MODALIDAD_CONTRATACION}}</td>
+</tr>
+
+<tr>
+<th>Inspector Fiscal</th>
+<td>{{INSPECTOR_FISCAL}}</td>
+</tr>
+
+<tr>
+<th>Certificados de Habilidad</th>
+<td>{{CERTIFICADOS_HABILIDAD}}</td>
+</tr>
+
+</table>
+
+</div>
+
+<div class="section">
+
+<h2>Certificado de Disponibilidad Presupuestaria</h2>
+
+<p>{{CERTIFICADO_DISPONIBILIDAD}}</p>
+
+<table>
+
+<tr>
+<th>Subtítulo</th>
+<td>{{SUBTITULO}}</td>
+</tr>
+
+<tr>
+<th>Ítem</th>
+<td>{{ITEM}}</td>
+</tr>
+
+<tr>
+<th>Asignación</th>
+<td>{{ASIGNACION}}</td>
+</tr>
+
+</table>
+
+</div>
+
+<div class="section">
+
+<h2>Programación Presupuestaria</h2>
+
+<table>
+
+<tr>
+<th>Resolución DIPRES</th>
+<th>2026</th>
+<th>2027</th>
+<th>2028</th>
+<th>2029</th>
+<th>2030</th>
+</tr>
+
+<tr>
+<td>{{RESOLUCION_DIPRES}}</td>
+<td>{{MONTO_2026}}</td>
+<td>{{MONTO_2027}}</td>
+<td>{{MONTO_2028}}</td>
+<td>{{MONTO_2029}}</td>
+<td>{{MONTO_2030}}</td>
+</tr>
+
+<tr>
+<th>TOTAL</th>
+<td colspan="5">{{TOTAL_PROGRAMADO}}</td>
+</tr>
+
+</table>
+
+</div>
+
+<div class="section">
+
+<h2>Informe de Conflicto de Intereses</h2>
+
+<p>{{INFORME_CONFLICTO_INTERESES}}</p>
+
+</div>
+
+<div class="section">
+
+<h2>Revisión Cumplimiento Normativo de la Licitación Pública</h2>
+
+<table>
+
+<tr>
+<th>Requisito</th>
+<th>Cumplimiento</th>
+</tr>
+
+<tr>
+<td>Informe de Inspeccionabilidad</td>
+<td>{{INSPECCIONABILIDAD}}</td>
+</tr>
+
+<tr>
+<td>Aviso de Licitación</td>
+<td>{{AVISO}}</td>
+</tr>
+
+<tr>
+<td>Aclaraciones y Respuestas</td>
+<td>{{ACLARACIONES}}</td>
+</tr>
+
+<tr>
+<td>Requisitos de Participación</td>
+<td>{{REQUISITOS_PARTICIPACION}}</td>
+</tr>
+
+<tr>
+<td>Propuesta Técnica</td>
+<td>{{PROPUESTA_TECNICA}}</td>
+</tr>
+
+<tr>
+<td>Propuesta Económica</td>
+<td>{{PROPUESTA_ECONOMICA}}</td>
+</tr>
+
+<tr>
+<td>Apertura y Evaluación</td>
+<td>{{EVALUACION}}</td>
+</tr>
+
+<tr>
+<td>Garantías</td>
+<td>{{GARANTIAS}}</td>
+</tr>
+
+<tr>
+<td>Seguros</td>
+<td>{{SEGUROS}}</td>
+</tr>
+
+<tr>
+<td>Subcontratos</td>
+<td>{{SUBCONTRATOS}}</td>
+</tr>
+
+<tr>
+<td>Ratificación de Oferta</td>
+<td>{{RATIFICACION}}</td>
+</tr>
+
+</table>
+
+</div>
+
+<div class="section">
+
+<h2>Antecedentes Adicionales Solicitados</h2>
+
+<p>{{ANTECEDENTES_ADICIONALES}}</p>
+
+</div>
+
+<div class="section">
+
+<h2>Observaciones</h2>
+
+<div class="note">
+
+<p><strong>Observaciones Revisor Técnico:</strong></p>
+
+<p>{{OBSERVACIONES_TECNICAS}}</p>
+
+<p><strong>Observaciones Revisor Jurídico:</strong></p>
+
+<p>{{OBSERVACIONES_JURIDICAS}}</p>
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>Conclusión</h2>
+
+<p>{{CONCLUSION}}</p>
+
+</div>
+
+<div class="footer">
+
+<p>Documento generado conforme a la estructura institucional de Pauta de Revisión.</p>
+
+</div>
+
+</body>
+</html>
