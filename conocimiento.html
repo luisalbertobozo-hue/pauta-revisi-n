@@ -1,15 +1,45 @@
 <!DOCTYPE html>
-<html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Base de Conocimiento - Revisor de Resoluciones</title>
 <style>
-body{font-family:Arial,Helvetica,sans-serif;max-width:1100px;margin:auto;padding:24px;line-height:1.6;color:#1f2937}h1{color:#123b63;border-bottom:3px solid #123b63;padding-bottom:10px}h2{color:#1f5f94;margin-top:32px}table{width:100%;border-collapse:collapse}th,td{border:1px solid #cbd5e1;padding:10px;text-align:left;vertical-align:top}th{background:#e7eef6}.box{background:#eef5fb;border-left:5px solid #1f5f94;padding:16px;margin:16px 0;border-radius:6px}a{color:#075985}.case{border:1px solid #cbd5e1;border-radius:9px;padding:18px;margin:18px 0}.tag{display:inline-block;background:#dbeafe;color:#123b63;border-radius:999px;padding:4px 9px;font-weight:bold;font-size:.85rem}
-</style></head><body>
-<h1>Base de Conocimiento del Agente Revisor de Resoluciones</h1>
-<p>Esta página explica la relación entre la pauta maestra, las resoluciones de origen y las pautas completadas utilizadas como casos de referencia.</p>
-<div class="box"><strong>Objetivo:</strong> el usuario aporta únicamente una nueva resolución. El agente analiza el documento y entrega la pauta completa utilizando la estructura oficial y los criterios observados en los ejemplos.</div>
-<h2>Jerarquía documental</h2><ol><li><strong>Pauta maestra:</strong> define la estructura oficial y tiene máxima prioridad.</li><li><strong>Instrucciones del agente:</strong> establecen el procedimiento y las restricciones.</li><li><strong>Casos de referencia:</strong> muestran la relación entre una resolución y su pauta completada.</li><li><strong>Documentos originales:</strong> permiten comprobar el origen de la información.</li></ol>
-<h2>Reglas de uso</h2><ul><li>Mantener exactamente los títulos, el orden y las secciones de la pauta maestra.</li><li>Analizar cada nueva resolución de manera independiente.</li><li>No copiar datos particulares desde los ejemplos.</li><li>Usar los ejemplos para reconocer patrones de extracción, clasificación y redacción.</li><li>Si existe discrepancia entre un ejemplo y la pauta maestra, prevalece la pauta maestra.</li></ul>
-<h2>Casos de referencia</h2>
-<div class="case"><span class="tag">Caso 1</span><h3>Resolución MOP N° 31 de 2026</h3><p><strong>Documento de entrada:</strong> resolución que adjudica una licitación pública para el mejoramiento de la pasada urbana de la Ruta 5 en Arica.</p><p><strong>Resultado asociado:</strong> pauta completa elaborada a partir de la resolución y de los antecedentes revisados.</p><p><a href="ejemplos/ejemplo-1.html"><strong>Abrir el caso completo y la pauta asociada</strong></a></p><p><a href="archivos/resolucion-mop-31-2026.pdf">Resolución original</a> | <a href="archivos/pauta-res-mop-31-2026.docx">Pauta original</a></p></div>
-<h2>Procedimiento obligatorio del agente</h2><ol><li>Consultar la pauta maestra.</li><li>Leer íntegramente la resolución aportada.</li><li>Extraer los antecedentes verificables.</li><li>Consultar los casos de referencia para reconocer patrones, sin trasladar sus datos.</li><li>Completar todas las secciones con la estructura oficial.</li><li>Entregar únicamente la pauta completa como resultado final.</li></ol>
-<footer><p>Base de conocimiento del Agente Revisor de Resoluciones. Versión 1.1.</p></footer></body></html>
+:root{--azul:#123b63;--azul2:#1f5f94;--claro:#eef5fb;--borde:#cbd5e1;--texto:#1f2937;--fondo:#f7f9fc}
+*{box-sizing:border-box}body{margin:0;background:var(--fondo);color:var(--texto);font-family:Arial,Helvetica,sans-serif;line-height:1.6}header{background:linear-gradient(135deg,var(--azul),var(--azul2));color:#fff;padding:38px 20px}.wrap{max-width:1100px;margin:auto}header h1{margin:0 0 8px}nav{background:#fff;border-bottom:1px solid var(--borde);padding:10px 20px;position:sticky;top:0}nav .wrap{display:flex;gap:12px;flex-wrap:wrap}nav a{color:var(--azul);text-decoration:none;font-weight:bold}main{max-width:1100px;margin:24px auto;background:#fff;border:1px solid var(--borde);border-radius:12px;padding:28px;box-shadow:0 6px 24px rgba(15,23,42,.06)}h2{color:var(--azul);border-bottom:2px solid #dbe6f0;padding-bottom:7px;margin-top:34px}.box{background:var(--claro);border-left:5px solid var(--azul2);padding:16px;border-radius:7px}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.case{border:1px solid var(--borde);border-radius:10px;padding:18px;background:#fff}.case h3{color:var(--azul);margin-top:8px}.tag{display:inline-block;background:#dbeafe;color:var(--azul);border-radius:999px;padding:4px 9px;font-weight:bold;font-size:.85rem}.button{display:inline-block;background:var(--azul);color:#fff;text-decoration:none;padding:9px 12px;border-radius:7px;font-weight:bold}.priority{background:#fff7ed;border:1px solid #fed7aa;padding:14px;border-radius:8px}footer{max-width:1100px;margin:0 auto 30px;color:#64748b;padding:0 10px}@media(max-width:850px){.grid{grid-template-columns:1fr}main{margin:12px;padding:18px;border-radius:0}}
+
+.output-oficial{margin:28px 0;padding:22px;border:2px solid var(--azul2);border-radius:10px;background:#f8fbff}.output-oficial h2{margin-top:12px}.output-oficial .button{margin-top:4px}
+</style>
+</head>
+<body>
+<header><div class="wrap"><h1>Base de Conocimiento del Agente Revisor de Resoluciones</h1><p>Guía central que relaciona la pauta maestra con resoluciones de origen y pautas completadas de referencia.</p></div></header>
+<nav><div class="wrap"><a href="pauta-maestra.html">Pauta maestra</a><a href="#reglas">Reglas</a><a href="#casos">Casos de referencia</a><a href="#procedimiento">Procedimiento</a></div></nav>
+<main>
+<section class="box"><strong>Objetivo del proceso:</strong> el usuario aporta únicamente una resolución. El agente analiza el documento y entrega como output final la Pauta Maestra corregida, íntegramente completada y conservando su estructura oficial.</section>
+<section class="output-oficial" id="output-oficial">
+<span class="tag">Output oficial obligatorio</span>
+<h2>Pauta Maestra corregida</h2>
+<p>La <strong>Pauta Maestra corregida</strong> constituye la plantilla obligatoria del resultado final. El agente debe reproducirla íntegramente y completar sus campos con información verificable extraída de la resolución analizada.</p>
+<p><a class="button" href="pauta-maestra.html">Abrir Pauta Maestra corregida</a></p>
+<ol>
+<li>Mantener exactamente los títulos, las secciones, las tablas y el orden de la pauta.</li>
+<li>Completar los espacios aplicables con antecedentes verificables de la resolución y de los documentos aportados.</li>
+<li>No agregar, eliminar, resumir ni reorganizar apartados.</li>
+<li>Usar los casos de referencia únicamente para reconocer criterios y nivel de detalle.</li>
+<li>Si existe discrepancia entre un ejemplo y la Pauta Maestra, prevalece la Pauta Maestra corregida.</li>
+<li>Entregar únicamente la pauta completada como resultado final.</li>
+</ol>
+</section><h2>Jerarquía documental</h2>
+<ol><li><strong><a href="pauta-maestra.html">Pauta Maestra corregida</a></strong>: define la estructura del output oficial, tiene máxima prioridad y debe entregarse íntegramente completada.</li><li><strong>Instrucciones del agente:</strong> establecen el procedimiento y las restricciones.</li><li><strong>Casos de referencia:</strong> muestran la relación entre una resolución y su pauta completada.</li><li><strong>Documentos originales:</strong> permiten comprobar el origen de la información, cuando estén disponibles.</li></ol>
+<section id="reglas"><h2>Reglas obligatorias</h2><ul><li>Mantener exactamente los títulos, el orden y las secciones de la pauta maestra.</li><li>Analizar cada nueva resolución de manera independiente.</li><li>No copiar nombres, RUT, montos, fechas, identificadores ni conclusiones desde los ejemplos.</li><li>Usar los casos para reconocer patrones de extracción, clasificación, revisión y redacción.</li><li>No inventar antecedentes ni completar vacíos mediante suposiciones.</li></ul><p class="priority"><strong>Regla de prioridad:</strong> si existe discrepancia entre un caso de referencia y la pauta maestra, prevalece siempre la pauta maestra.</p></section>
+<section id="casos"><h2>Casos de referencia</h2><div class="grid">
+<article class="case"><span class="tag">Caso 1</span><h3>Resolución MOP N° 31 de 2026</h3><p><strong>Materia:</strong> adjudicación de licitación pública para mejoramiento vial.</p><p><strong>Aprendizaje:</strong> precalificación, evaluación de ofertas, disponibilidad presupuestaria, garantías y cumplimiento normativo.</p><a class="button" href="ejemplos/ejemplo-1.html">Abrir Caso 1</a></article>
+<article class="case"><span class="tag">Caso 2</span><h3>Resolución DGOP N° 79 de 2025</h3><p><strong>Materia:</strong> adjudicación de obra portuaria en Caleta Punta Lavapie.</p><p><strong>Aprendizaje:</strong> licitación de obra, destinación marítima, evaluación técnica y tratamiento de observaciones formales.</p><a class="button" href="ejemplos/ejemplo-2.html">Abrir Caso 2</a></article>
+<article class="case"><span class="tag">Caso 3</span><h3>Resolución DGOP N° 2 de 2026</h3><p><strong>Materia:</strong> liquidación final del contrato Concepción-Chiguayante.</p><p><strong>Aprendizaje:</strong> modificaciones, reajustes, prescripción, recepciones, retenciones, garantías y conclusión de representación.</p><a class="button" href="ejemplos/ejemplo-3.html">Abrir Caso 3</a></article>
+</div></section>
+<section id="procedimiento"><h2>Procedimiento obligatorio del agente</h2><ol><li>Abrir y consultar la Pauta Maestra corregida antes de comenzar el análisis.</li><li>Leer íntegramente la resolución aportada por el usuario.</li><li>Extraer únicamente antecedentes verificables y asignarlos a la sección correspondiente.</li><li>Consultar los casos de referencia para reconocer patrones de llenado, sin copiar sus datos.</li><li>Completar todas las secciones, tablas y campos de la Pauta Maestra corregida.</li><li>Verificar coherencia entre montos, fechas, autoridades, normativa, observaciones y conclusión.</li><li>Entregar únicamente la Pauta Maestra completada como output final.</li></ol></section>
+</main>
+<footer><p>Base de conocimiento del Agente Generador de Pautas. Versión 1.4 - Pauta Maestra corregida integrada.</p></footer>
+</body>
+</html>
